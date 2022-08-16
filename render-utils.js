@@ -63,6 +63,9 @@ export function renderPostDetail(post) {
     postDescription.textContent = post.description;
     postContact.textContent = post.contact;
 
+    const event = new Date(post.created_at);
+    postDate.textContent = `Posted: ${event.toDateString()}`;
+
     postDetailDiv.classList.add('post-it-detail');
     titleAndButtonDiv.classList.add('title-and-button');
     postDate.classList.add('post-date');
