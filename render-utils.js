@@ -58,6 +58,11 @@ export function renderPostDetail(post) {
     const postDescription = document.createElement('p');
     const postContact = document.createElement('p');
 
+    // Delete button logic
+    deletePostButton.addEventListener('click', () => {
+        console.log('delete button clicked');
+    });
+
     titleDiv.textContent = post.title;
     deletePostButton.textContent = 'Delete';
     postDescription.textContent = post.description;
