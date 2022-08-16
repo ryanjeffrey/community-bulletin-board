@@ -35,6 +35,7 @@
 }
 
 .post-it h2, .post-it-detail h2 {
+    text-transform: capitalize;
     font-weight: bold;
 }
 
@@ -89,4 +90,5 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-transform: capitalize;
 }
