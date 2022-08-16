@@ -59,3 +59,10 @@ export async function getPost(id) {
     const response = await client.from('posts').select('*').match({ id }).single();
     return checkError(response);
 }
+
+export async function deletePost(id) {
+    const user = checkAuth();
+
+    const response = await client.from('posts').delete().match({ id, user_id: user.id });
+    return checkError(response);
+}
