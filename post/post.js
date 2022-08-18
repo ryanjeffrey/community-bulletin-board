@@ -1,10 +1,9 @@
-import { checkAuth, getPost } from '../fetch-utils.js';
+import { checkAuth, deletePost, getPost } from '../fetch-utils.js';
 import { renderPostDetail } from '../render-utils.js';
 
 const postDetailSection = document.getElementById('post-detail-section');
 
 const user = checkAuth();
-console.log(user.id);
 
 const params = new URLSearchParams(window.location.search);
 
@@ -18,12 +17,17 @@ async function loadData() {
     const postDetail = renderPostDetail(post);
     postDetailSection.append(postDetail);
 
-    console.log(post.user_id);
-
+    // show delete button only if user created the post
     if (user.id === post.user_id) {
-        console.log('deletable');
-    } else {
-        console.log(`cannot delete another user's post`);
+        const deletePostButton = document.createElement('button');
+        deletePostButton.textContent = 'Delete Post';
+        deletePostButton.classList.add('delete-post');
+        postDetailSection.prepend(deletePostButton);
+        
+        deletePostButton.addEventListener('click', async () => {
+            await deletePost(postId);
+            location.replace('../');
+        });
     }
 }
 
