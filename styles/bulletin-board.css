@@ -68,13 +68,6 @@
     grid-template-rows: auto auto auto 1fr auto;
 }
 
-.post-it-detail button {
-    padding: 10px;
-    color: red;
-    border: 1px solid red;
-    background-color: white;
-    border-radius: .6em;
-}
 
 .post-it-detail h2, .post-it-detail p {
     margin: 4px 0;
@@ -86,9 +79,10 @@
     color: gray;
 }
 
-.title-and-button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-transform: capitalize;
+.delete-post {
+    padding: 10px;
+    color: red;
+    border: 1px solid red;
+    background-color: white;
+    border-radius: .6em;
 }
