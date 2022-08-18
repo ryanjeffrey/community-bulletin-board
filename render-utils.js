@@ -49,22 +49,14 @@ export function renderPosts(posts) {
 export function renderPostDetail(post) {
     const postDetailDiv = document.createElement('div');
 
-    const titleAndButtonDiv = document.createElement('div');
     const titleDiv = document.createElement('h2');
-    const deletePostButton = document.createElement('button');
-
+    
     const postEmoji = document.createElement('p');
     const postDate = document.createElement('p');
     const postDescription = document.createElement('p');
     const postContact = document.createElement('p');
 
-    // Delete button logic
-    deletePostButton.addEventListener('click', () => {
-        console.log('delete button clicked');
-    });
-
     titleDiv.textContent = post.title;
-    deletePostButton.textContent = 'Delete';
     postDescription.textContent = post.description;
     postContact.textContent = post.contact;
 
@@ -72,12 +64,9 @@ export function renderPostDetail(post) {
     postDate.textContent = `Posted: ${event.toDateString()}`;
 
     postDetailDiv.classList.add('post-it-detail');
-    titleAndButtonDiv.classList.add('title-and-button');
     postDate.classList.add('post-date');
 
-    titleAndButtonDiv.append(titleDiv, deletePostButton);
-
-    postDetailDiv.append(titleAndButtonDiv, postEmoji, postDate, postDescription, postContact);
+    postDetailDiv.append(titleDiv, postEmoji, postDate, postDescription, postContact);
 
     return postDetailDiv;
 }
