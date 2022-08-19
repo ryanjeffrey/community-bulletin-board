@@ -63,7 +63,7 @@ export async function getProfiles() {
 }
 
 export async function getProfile(id) {
-    const response = await client.from('profiles').match({ id }).single();
+    const response = await client.from('profiles').select('*').match({ id }).single();
     return checkError(response);
 }
 
