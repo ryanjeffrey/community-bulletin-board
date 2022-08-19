@@ -49,13 +49,18 @@ export function renderProfile(user) {
     const avatar = document.createElement('img');
     avatar.src = '/assets/avatar-placeholder-circle.png';
 
+    const nameAndBioDiv = document.createElement('div');
+    nameAndBioDiv.classList.add('name-and-bio');
+
     const userName = document.createElement('span');
-    userName.textContent = `${user.name}`;
+    userName.textContent = `${user.user_name}`;
 
     const bio = document.createElement('p');
     bio.textContent = `${user.bio}`;
 
-    userAnchor.append(avatar, userName, bio);
+    nameAndBioDiv.append(userName, bio);
+
+    userAnchor.append(avatar, nameAndBioDiv);
 
     return userAnchor;
 }
