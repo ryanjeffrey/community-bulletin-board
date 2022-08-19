@@ -22,16 +22,21 @@
         <img class="logo" src="/assets/cbb-logo.png">
         <h1>User Profile</h1>
         <nav>
+            <a href="../users/">Users</a>
             <a href="../">Bulletin</a>
             <a id="sign-out-link" href="auth">Sign out</a>
         </nav>
     </header>
 
     <main>
-        <form id="post-it-form">
+        <form id="profile-form">
             <label>
                 <div>User</div>
                 <input name="name" required placeholder="name">
+            </label>
+            <label>
+                <div>Avatar</div>
+                <input name="avatar" type="file" accept="image/png, image/jpeg">
             </label>
 
             <label>
