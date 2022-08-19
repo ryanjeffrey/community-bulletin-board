@@ -41,3 +41,21 @@ export function renderPosts(posts) {
 
     return fragment;
 }
+
+export function renderProfile(user) {
+    const userAnchor = document.createElement('a');
+    userAnchor.classList.add('user-anchor');
+
+    const avatar = document.createElement('img');
+    avatar.src = '/assets/avatar-placeholder-circle.png';
+
+    const userName = document.createElement('span');
+    userName.textContent = `${user.name}`;
+
+    const bio = document.createElement('p');
+    bio.textContent = `${user.bio}`;
+
+    userAnchor.append(avatar, userName, bio);
+
+    return userAnchor;
+}
