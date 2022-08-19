@@ -43,8 +43,8 @@ export function renderPosts(posts) {
 }
 
 export function renderProfile(user) {
-    const userAnchor = document.createElement('a');
-    userAnchor.classList.add('user-anchor');
+    const userDiv = document.createElement('div');
+    userDiv.classList.add('user-div');
 
     const avatar = document.createElement('img');
     avatar.src = '/assets/avatar-placeholder-circle.png';
@@ -60,7 +60,7 @@ export function renderProfile(user) {
 
     nameAndBioDiv.append(userName, bio);
 
-    userAnchor.append(avatar, nameAndBioDiv);
+    userDiv.append(avatar, nameAndBioDiv);
 
-    return userAnchor;
+    return userDiv;
 }

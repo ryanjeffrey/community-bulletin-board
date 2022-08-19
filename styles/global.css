@@ -160,7 +160,7 @@ a {
     grid-template-columns: auto auto auto;
 }
 
-.user-anchor {
+.user-div {
     border: 1px solid black;
     border-radius: var(--padding);
     margin: var(--padding);
@@ -170,7 +170,7 @@ a {
     justify-content: center;
 }
 
-.user-anchor img {
+.user-div img {
     height: 30px;
     margin-right: 12px;
 }
