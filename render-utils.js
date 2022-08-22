@@ -46,6 +46,29 @@ export function renderPosts(posts) {
     return fragment;
 }
 
+export function renderProfile(user) {
+    const userDiv = document.createElement('div');
+    userDiv.classList.add('user-div');
+
+    const avatar = document.createElement('img');
+    avatar.src = '/assets/avatar-placeholder-circle.png';
+
+    const nameAndBioDiv = document.createElement('div');
+    nameAndBioDiv.classList.add('name-and-bio');
+
+    const userName = document.createElement('span');
+    userName.textContent = `${user.user_name}`;
+
+    const bio = document.createElement('p');
+    bio.textContent = `${user.bio}`;
+
+    nameAndBioDiv.append(userName, bio);
+
+    userDiv.append(avatar, nameAndBioDiv);
+
+    return userDiv;
+}
+
 export function renderPostDetail(post) {
     const postDetailDiv = document.createElement('div');
 
