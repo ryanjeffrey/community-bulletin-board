@@ -37,6 +37,10 @@ header {
     background-color: var(--header-background);
 }
 
+header a {
+    margin: 0 16px;
+}
+
 h1 {
     font-size: 1.2em;
     font-weight: 800;
@@ -91,6 +95,10 @@ form {
 
     display: grid;
     gap: 20px;
+}
+
+button {
+    cursor: pointer;
 }
 
 label {
@@ -151,6 +159,8 @@ form button:disabled {
 
 a {
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
 /* Users */
