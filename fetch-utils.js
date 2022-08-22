@@ -1,5 +1,6 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://xexayazyxwoajshplpqh.supabase.co';
+const SUPABASE_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhleGF5YXp5eHdvYWpzaHBscHFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjAzMjA0OTIsImV4cCI6MTk3NTg5NjQ5Mn0.u-0zS-Su3LEiijPIvrFXFcBTMPkQSfQ7NM-erIPDnGc';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
@@ -52,4 +53,16 @@ export async function getPosts() {
 
 export async function createPost(post) {
     return await client.from('posts').insert(post);
+}
+
+export async function getPost(id) {
+    const response = await client.from('posts').select('*').match({ id }).single();
+    return checkError(response);
+}
+
+export async function deletePost(id) {
+    const user = checkAuth();
+
+    const response = await client.from('posts').delete().match({ id, user_id: user.id });
+    return checkError(response);
 }

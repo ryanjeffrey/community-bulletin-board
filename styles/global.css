@@ -37,6 +37,10 @@ header {
     background-color: var(--header-background);
 }
 
+header a {
+    margin: 0 16px;
+}
+
 h1 {
     font-size: 1.2em;
     font-weight: 800;
@@ -93,6 +97,10 @@ form {
     gap: 20px;
 }
 
+button {
+    cursor: pointer;
+}
+
 label {
     display: grid;
     gap: 5px;
@@ -147,4 +155,9 @@ form button:disabled {
 .error {
     min-height: 1em;
     color: red;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
