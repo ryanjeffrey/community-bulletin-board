@@ -67,6 +67,7 @@ export function renderProfile(user) {
     userDiv.append(avatar, nameAndBioDiv);
 
     return userDiv;
+}
 
 export function renderPostDetail(post) {
     const postDetailDiv = document.createElement('div');
