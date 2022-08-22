@@ -37,6 +37,10 @@ header {
     background-color: var(--header-background);
 }
 
+header a {
+    margin: 0 16px;
+}
+
 h1 {
     font-size: 1.2em;
     font-weight: 800;
@@ -93,6 +97,10 @@ form {
     gap: 20px;
 }
 
+button {
+    cursor: pointer;
+}
+
 label {
     display: grid;
     gap: 5px;
@@ -147,4 +155,40 @@ form button:disabled {
 .error {
     min-height: 1em;
     color: red;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+/* Users */
+
+#users-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.user-div {
+    border: 1px solid black;
+    border-radius: var(--padding);
+    margin: var(--padding);
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-div img {
+    height: 30px;
+    margin-right: 12px;
+}
+
+.name-and-bio span {
+    font-size: 1.4em;
+}
+
+.name-and-bio p {
+    color: var(--label-color);
 }
